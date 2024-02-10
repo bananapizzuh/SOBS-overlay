@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.base {
+  display: flex;
+  flex-direction: row;
+  height: 110px;
+  width: 350px;
+  border-radius: 15px;
+  background-color: #080404;
+}
+
+.album {
+  height: 90px;
+  width: 90px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+.info-container {
+  margin-left: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.text {
+  font-family: 'Open Sans';
+  color: #FFFFFF;
+}
+
+.song {
+  width: 220px;
+  height: 30px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.artist {
+  width: 220px;
+  height: 30px;
+}
+
+.marquee {
+  display: inline-block;
+  animation-delay: 1s;
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  50% {
+    transform: translate(-100%, 0);
+  }
+}
+
+.time-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.progress-bar {
+  background-color: #FFFFFF;
+  height: 4px;
+  width: 20%;
+  border-radius: 20px;
+}
+
+.duration-bar {
+  margin-top: 7px;
+  background-color: #B1B1B1;
+  height: 4px;
+  width: 140px;
+  border-radius: 20px;
+}
+
+.time {
+  font-size: 12px;
+  margin-left: 5px;
+  text-align: center;
+}
+
+
