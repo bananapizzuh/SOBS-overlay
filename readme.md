@@ -4,8 +4,8 @@ A spotify overlay made for OBS studio using spotipy and flask.
 ![example.gif](example.gif)
 
 ## How to use
-- Clone this repository and either run `pipenv install` or `pip install requirements.txt`.
-- Generate a spotify developer client ID and client Secret for the web api [here](https://developer.spotify.com/dashboard).
+- Clone this repository and either run `pipenv install` or `pip install -r requirements.txt`.
+- Generate a spotify developer client ID and client Secret for the web api [here](https://developer.spotify.com/dashboard). Make the "callback URI" http://localhost:5000/callback/
 - Put them in a .env file in the same directory as the application, it should look like this:
     ```
     SPOTIPY_CLIENT_ID="{Your ID Here}"
