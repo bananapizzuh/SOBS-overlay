@@ -1,7 +1,7 @@
 # SOBS-Overlay
 A spotify overlay made for OBS studio using spotipy and flask.
 
-![example.gif](https://raw.githubusercontent.com/bananapizzuh/SOBS-Overlay/res/example.gif)
+![example.gif](https://imgur.com/a/Xa6NjcU)
 
 ## How to use
 - Clone this repository and either run `pipenv install` or `pip install requirements.txt`.
