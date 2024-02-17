@@ -50,7 +50,7 @@ function scroll_text() {
 }
 
 setInterval(function() {
-    fetch("https://sobs.bananapizzuh.dev/update")
+    fetch("/update")
         .then(response => response.json())
         .then(data => {
             updateSongInfo(data.track_name, data.artists, data.album_cover, data.duration, data.progress);
