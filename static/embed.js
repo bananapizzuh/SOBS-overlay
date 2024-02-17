@@ -55,7 +55,6 @@ setInterval(function() {
     fetch("http://localhost:5000/update")
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             updateSongInfo(data.track_name, data.artists, data.album_cover, data.duration, data.progress);
         });
 }, 1000);
