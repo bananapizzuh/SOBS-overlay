@@ -9,11 +9,13 @@ import urllib.parse
 import random
 import string
 
+load_dotenv()
+
 client_id = os.getenv("CLIENT_ID")
 client_secret = os.getenv("CLIENT_SECRET")
 redirect_uri = os.getenv("REDIRECT_URI")
 
-load_dotenv()
+
 app = Flask(__name__)
 app.secret_key = os.urandom(32)
 
