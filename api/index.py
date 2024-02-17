@@ -5,7 +5,7 @@ import requests
 import os
 from datetime import datetime, timezone
 import base64
-import urllib.parse
+from urllib.parse import urlencode
 import random
 import string
 
@@ -63,8 +63,7 @@ def get_token(code=None, redirect_uri=redirect_uri, refresh_token=False):
     return response
 
 
-@app.route("/authorize")
-def authorize():
+def get_auth_url():
     params = {
         "client_id": client_id,
         "response_type": "code",
@@ -73,11 +72,7 @@ def authorize():
         "state": generate_random_string(16),
     }
 
-    auth_url = (
-        f"https://accounts.spotify.com/authorize?{urllib.parse.urlencode(params)}"
-    )
-
-    return redirect(auth_url)
+    return f"https://accounts.spotify.com/authorize?{urlencode(params)}"
 
 
 @app.route("/callback")
@@ -86,7 +81,7 @@ def callback():
     state = request.args.get("state")
 
     if state == None:
-        return redirect("/authorize")
+        return redirect("/")
 
     session["token"] = get_token(session["code"])
     return redirect("/embed")
@@ -95,7 +90,7 @@ def callback():
 @app.route("/update")
 def update():
     if not check_auth():
-        return redirect("/authorize")
+        return redirect("/")
 
     if (
         session["token"]["time_acquired"] - datetime.now(timezone.utc)
@@ -146,9 +141,11 @@ def embed():
 
 @app.route("/")
 def index():
+    if check_auth():
+        return redirect("/embed")
     session["code"] = None
     session["token"] = None
-    return redirect("/authorize")
+    return redirect(get_auth_url())
 
 
 if __name__ == "__main__":
