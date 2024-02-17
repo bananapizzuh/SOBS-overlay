@@ -134,7 +134,7 @@ def update():
         }
     )
 
-    response.headers.add("Access-Control-Allow-Origin", os.getenv("ORIGIN"))
+    response.headers.add("Access-Control-Allow-Origin", "*")
     return response
 
 
