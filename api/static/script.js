@@ -36,9 +36,7 @@ function updateSongInfo(songName, artists, albumCover, duration, progress) {
 function scroll_text() {
     var songElement = document.querySelector(".song");
     var artistElement = document.querySelector(".artist");
-    console.log(songElement.scrollWidth, artistElement.scrollWidth );
     if (songElement.scrollWidth > 220) {
-        console.log("adding marquee");
         songElement.classList.add("marquee");
     } else {
         songElement.classList.remove("marquee");
